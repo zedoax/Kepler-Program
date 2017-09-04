@@ -30,21 +30,22 @@ int main(int argc, char* argv[]) {
 [4] True Anomaly: %f\n \
 > ", distance, axis, eccentricity, anomaly);
 		if(fgets(input, 128, stdin) != NULL) {
-			if(((int)input[0]) >= 1 && ((int)input[0]) <= 4) {
+			int x = strtol(input, (char**)NULL, 10);
+			if(x >= 1 && x <= 4) {
 				fprintf(stdout, "Enter the new value: ");
-				switch(((int)input[0])) {
+				switch(x) {
 					case 1:
-						gets("%f", distance);
-					break;
+						scanf("%f", &distance);
+						break;
 					case 2:
-						gets("%f", axis);
-					break;
+						scanf("%f", &axis);
+						break;
 					case 3:
-						gets("%f", eccentricity);
-					break;
+						scanf("%f", &eccentricity);
+						break;
 					case 4:
-						gets("%f", anomaly);
-					break;
+						scanf("%f", &anomaly);
+						break;
 				}
 			}
 		}
